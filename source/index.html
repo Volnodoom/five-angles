@@ -7,5 +7,131 @@
     <link rel="stylesheet" href="css/style.min.css">
     <title>Logo. Корзина.</title>
   </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+      <a class="visually-hidden" href="#main">Перейти к содержанию корзины</a>
 
+        <a class="page-header__logo" href="#">
+          <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" width="77" heigh="24" viewBox="0 0 77 24" aria-label="Logo">
+            <use href="./img/sprite.svg#logo-adaptive"></use>
+          </svg>
+        </a>
+
+        <nav class="page-header__navigation navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <button class="button button--fake navigation__burger" type="button">
+                <span class="visually-hidden">Меню</span>
+              </button>
+
+            </li class="navigation__item">
+
+            <li class="navigation__item">
+              <button class="button button--fake navigation__search" type="button">
+                <svg class="image__search" xmlns="http://www.w3.org/2000/svg" width="22" heigh="22" viewBox="0 0 26 24" aria-label="Поиск">
+                  <use href="./img/sprite.svg#search"></use>
+                </svg>
+              </button>
+
+            </li class="navigation__item">
+
+            <li class="navigation__item">
+              <a class="button button--fake navigation__likes" href="#">
+                <svg class="image__like" xmlns="http://www.w3.org/2000/svg" width="24" heigh="22" viewBox="-1 0 28 26" aria-label="Избранные">
+                  <use href="./img/sprite.svg#like"></use>
+                </svg>
+              </a>
+
+            </li>
+
+            <li class="navigation__item">
+              <a class="button button--fake navigation__basket" href="#">
+                <svg class="image__basket" xmlns="http://www.w3.org/2000/svg" width="20" heigh="22" viewBox="-1 0 25 25" aria-label="Корзина">
+                  <use href="./img/sprite.svg#basket"></use>
+                </svg>
+                <span class="navigation__basket-count">4</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section>
+          <ul>
+            <li>
+              <a href="#">Главная</a>
+            </li>
+            <li>
+              <a href="#">Корзина</a>
+            </li>
+          </ul>
+
+          <h1>Корзина</h1>
+          <h3>
+            Есть аккаунт?
+            <a href="#">Войти</a>
+          </h3>
+
+          <form id="full-user-info">
+            <label for="user-addres">Адрес</label>
+            <input type="text" id="user-addres" value="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required>
+
+            <div>Map</div>
+
+            <label for="user-name">Ваше Имя</label>
+            <input type="text" id="user-name" required>
+
+            <label for="user-phone">Ваш Телефон</label>
+            <input type="tel" id="user-phone" required>
+
+            <label for="user-email">Ваш Email</label>
+            <input type="email" id="user-email" required>
+
+            <span tabindex="0">Тип упаковки</span>
+            <ul>
+              <li tabindex="0">Пункт 1</li>
+              <li tabindex="0">Пункт 2</li>
+              <li tabindex="0">Пункт 3</li>
+              <li tabindex="0">Пункт 4</li>
+              <li tabindex="0">Пункт 5</li>
+            </ul>
+
+            <label for="user-comments">Введите комментарий</label>
+            <input type="text" id="user-comments">
+          </form>
+
+          <h2>Выбранные товары:</h2>
+
+          <div>
+            <div>
+              <div>
+                <h3>Товар 1</h3>
+                <label class="visually-hidden" for=""></label>
+                <button type="button" aria-label="Уменьшить количество"></button>
+                <input type="number">
+                <button type="button" aria-label="Увеличить количество"></button>
+              </div>
+
+              <img src="" alt="">
+
+              <div>
+                <p>1090 руб.</p>
+                <button type="button">Удалить</button>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            <span>Итог:</span>
+            <span>3790 руб.</span>
+          </p>
+
+          <button type="submit" form="full-user-info">Купить</button>
+        </section>
+      </main>
+    </div>
+
+  </body>
 </html>

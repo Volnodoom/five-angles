@@ -1,0 +1,29 @@
+.button {
+  display: block;
+
+  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
+
+
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  border: 0;
+  border-radius: 0;
+  background-color: @white;
+
+  outline: none;
+  text-decoration: none;
+
+  font-family: inherit;
+  text-align: center;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  cursor: pointer;
+
+  &--fake {
+    --button-vertical-padding: 0;
+    --button-horizontal-padding: 0;
+  }
+}

@@ -1,0 +1,15 @@
+.font-params(@size; @line-heigh) {
+  font-size: if(isunit(@size, px), @size, ~"@{size}px");
+  line-height: if(isunit(@line-heigh, px), @line-heigh, ~"@{line-heigh}px");
+}
+
+.font-params(@size; @line-heigh; @weight) {
+  font-size: if(isunit(@size, px), @size, ~"@{size}px");
+  line-height: if(isunit(@line-heigh, px), @line-heigh, ~"@{line-heigh}px");
+  font-weight: @weight;
+}
+
+.size(@w; @h) {
+  width: if(isunit(@w, "%") or iskeyword(@w) or isunit(@w, px) or isstring(@w), @w, ~"@{w}px");
+  height: if(isunit(@h, "%") or iskeyword(@h) or isunit(@h, px) or isstring(@h), @h, ~"@{h}px");
+}
