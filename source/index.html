@@ -121,10 +121,10 @@
               <a class="basket__account-link" href="#"> Войти</a>
             </p>
 
-            <form class="basket__form" id="full-user-info">
-              <div class="basket__form-line-wrapper">
-                <textarea class="basket__input basket__input--textarea" id="user-addres" name="address" placeholder="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required></textarea>
-                <label class="basket__label" for="user-addres">Адрес</label>
+            <form class="form" id="full-user-info">
+              <div class="form__line-wrapper">
+                <textarea class="form__input form__input--textarea" id="user-addres" name="address" placeholder="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required></textarea>
+                <label class="form__label" for="user-addres">Адрес</label>
               </div>
 
               <div class="basket__map">
@@ -137,28 +137,28 @@
                 </iframe>
               </div>
 
-              <div class="basket__form-column">
-                <div class="basket__form-line-wrapper">
-                  <input class="basket__input" type="text" id="user-name" name="name" placeholder="Иван Иванович Кузнецов" required>
-                  <label class="basket__label" for="user-name">Ваше Имя</label>
+              <div class="form__column">
+                <div class="form__line-wrapper">
+                  <input class="form__input" type="text" id="user-name" name="name" placeholder="Иван Иванович Кузнецов" required>
+                  <label class="form__label" for="user-name">Ваше Имя</label>
                 </div>
 
-                <div class="basket__form-line-wrapper">
-                  <input class="basket__input" type="tel" id="user-phone" name="phone" placeholder="+7 (921)-324-17-36" required>
-                  <label class="basket__label" for="user-phone">Ваш Телефон</label>
+                <div class="form__line-wrapper">
+                  <input class="form__input" type="tel" id="user-phone" name="phone" placeholder="+7 (921)-324-17-36" required>
+                  <label class="form__label" for="user-phone">Ваш Телефон</label>
                 </div>
               </div>
 
-              <div class="basket__form-line-wrapper">
-                <input class="basket__input" type="email" id="user-email" name="email" placeholder="ivanIvanuch@mail.ru" required>
-                <label class="basket__label" for="user-email">Ваш Email</label>
+              <div class="form__line-wrapper">
+                <input class="form__input" type="email" id="user-email" name="email" placeholder="ivanIvanuch@mail.ru" required>
+                <label class="form__label" for="user-email">Ваш Email</label>
               </div>
 
-              <!-- add basket__form-line-wrapper--opened to wrapper element when user click on  basket__select span -->
+              <!-- add form__line-wrapper--opened to wrapper element when user click on  basket__select span -->
               <!-- when value selected it is needed to add class basket__select--selected to span basket__select -->
               <!-- as well as add classes  basket__choice--active and select-item--active for selected item-->
               <!-- basket__select--invalid highlight for wrong basket-select field -->
-              <div class="basket__form-line-wrapper basket__form-line-wrapper--select">
+              <div class="form__line-wrapper form__line-wrapper--select">
                 <span class="basket__select" tabindex="0">Тип упаковки</span>
                 <span class="basket__choice" tabindex="0">Пункт 3</span>
 
@@ -175,15 +175,97 @@
                 </ul>
               </div>
 
-              <div class="basket__form-line-wrapper">
-                <textarea class="basket__input basket__input--textarea" type="text" id="user-comments" name="comments" placeholder="Потрясающий продукт"></textarea>
-                <label class="basket__label" for="user-comments">Введите комментарий</label>
+              <div class="form__line-wrapper">
+                <textarea class="form__input form__input--textarea" type="text" id="user-comments" name="comments" placeholder="Потрясающий продукт"></textarea>
+                <label class="form__label" for="user-comments">Введите комментарий</label>
               </div>
             </form>
 
             <h2 class="basket__product">Выбранные товары:</h2>
 
             <ul class="basket__product-gallery">
+              <li class="basket__product-card">
+                <div class="basket__product-info">
+                  <h3 class="basket__product-name">Товар 1</h3>
+                  <p class="basket__product-description">Описание товара, которое может быть длинным</p>
+
+                  <div class="basket__count-regulation count-regulation">
+                    <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
+                    <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
+                    <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
+                  </div>
+                </div>
+
+                <picture>
+                  <source
+                    media="(min-width: 1110px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view-desktop.webp 1x, ./img/content/product-view-desktop-@2x.webp 2x"
+                  >
+                  <source
+                    media="(min-width: 1110px)"
+                    srcset="./img/content/product-view-desktop.jpg 1x, ./img/content/product-view-desktop-@2x.jpg 2x"
+                  >
+                  <source
+                    media="(min-width: 320px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
+                  >
+                  <img
+                    class="basket__product-img"
+                    src="./img/content/product-view.jpg"
+                    srcset="./img/content/product-view-@2x.jpg 2x"
+                    width="80"
+                    height="80"
+                    alt="">
+                </picture>
+
+                <div class="basket__product-decision">
+                  <p class="basket__product-price">1090 руб.</p>
+                  <button class="basket__product-remove button" type="button">Удалить</button>
+                </div>
+              </li>
+              <li class="basket__product-card">
+                <div class="basket__product-info">
+                  <h3 class="basket__product-name">Товар 1</h3>
+                  <p class="basket__product-description">Описание товара, которое может быть длинным</p>
+
+                  <div class="basket__count-regulation count-regulation">
+                    <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
+                    <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
+                    <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
+                  </div>
+                </div>
+
+                <picture>
+                  <source
+                    media="(min-width: 1110px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view-desktop.webp 1x, ./img/content/product-view-desktop-@2x.webp 2x"
+                  >
+                  <source
+                    media="(min-width: 1110px)"
+                    srcset="./img/content/product-view-desktop.jpg 1x, ./img/content/product-view-desktop-@2x.jpg 2x"
+                  >
+                  <source
+                    media="(min-width: 320px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
+                  >
+                  <img
+                    class="basket__product-img"
+                    src="./img/content/product-view.jpg"
+                    srcset="./img/content/product-view-@2x.jpg 2x"
+                    width="80"
+                    height="80"
+                    alt="">
+                </picture>
+
+                <div class="basket__product-decision">
+                  <p class="basket__product-price">1090 руб.</p>
+                  <button class="basket__product-remove button" type="button">Удалить</button>
+                </div>
+              </li>
               <li class="basket__product-card">
                 <div class="basket__product-info">
                   <h3 class="basket__product-name">Товар 1</h3>

@@ -1,0 +1,139 @@
+.form {
+  margin-bottom: 39px;
+
+  @media (min-width: @desktop-content-size) {
+    margin-bottom: 70px;
+  }
+}
+
+.form__line-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+  padding-top: 18px;
+
+  min-height: 46px;
+
+  @media (min-width: @desktop-content-size) {
+    margin-bottom: 20px;
+  }
+
+  &--select {
+    border-bottom: none;
+
+    &::after {
+      position: absolute;
+
+      top: 22px;
+      right: 8px;
+
+      content: '';
+
+      .size(10, 10);
+
+      border-bottom: 1px solid @black;
+      border-left: 1px solid @black;
+
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--opened {
+    .form__select-list {
+      display: block;
+    }
+
+    &::after {
+      transform: rotate(135deg);
+      top: 26px;
+    }
+
+
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 18px;
+  left: 0;
+
+  padding: 0 2px;
+  color: @grey;
+  transition: transform 0.3s;
+}
+
+.form__input {
+  width: 100%;
+
+  padding-bottom: 7px;
+  border: none;
+
+  border-bottom: 1px solid @grey;
+
+  &::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:focus-within::placeholder,
+  &:focus::placeholder {
+    opacity: 1;
+    color: @grey;
+  }
+
+  &:focus-visible {
+    outline: 1px solid @grey-light;
+    outline-offset: 3px;
+  }
+
+  &:not(:placeholder-shown) + .form__label,
+  &:focus + .form__label {
+    transform: translateY(-18px) scale(0.75);
+    transform-origin: top left;
+
+    transition: transform 0.3s;
+  }
+
+  &--textarea {
+    height: 30px;
+
+    resize: none;
+    overflow: hidden;
+
+    &:not(:placeholder-shown),
+    &:focus {
+      height: auto;
+      overflow: auto;
+
+      transition: height 0.3s;
+    }
+  }
+
+  &:invalid,
+  &:invalid + .form__label {
+    color: @red;
+    border-bottom-color: @red;
+  }
+}
+
+.form__map {
+  position: relative;
+  margin-bottom: 24px;
+
+  .size(100%, 200);
+
+  @media (min-width: @desktop-content-size) {
+    position: absolute;
+    top: 71px;
+    right: 0;
+
+    .size(555, 700);
+  }
+}
+
+.form__column {
+  @media (min-width: @desktop-content-size) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 35px;
+  }
+}
