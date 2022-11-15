@@ -4,6 +4,7 @@
 
   @media (min-width: @desktop-content-size) {
     width: @desktop-content-size;
+    margin: 0;
   }
 }
 
@@ -117,7 +118,7 @@
 
   @media (min-width: @desktop-content-size) {
     position: absolute;
-    top: 71px;
+    top: 0;
     right: 0;
 
     .size(555, 700);
@@ -209,7 +210,6 @@
 
 .basket__product-gallery {
   .remove-list-style();
-  margin-bottom: 22px;
 }
 
 .basket__product-card {
@@ -221,7 +221,7 @@
   display: flex;
 
   @media (min-width: @desktop-content-size) {
-    padding: 25px 0;
+    padding: 24px 0;
   }
 
   &:first-of-type {
@@ -237,6 +237,12 @@
 
     background-color: @grey-light;
     content: '';
+  }
+
+  &:last-of-type {
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -282,6 +288,7 @@
     display: block;
     margin-bottom: 20px;
     width: 150px;
+    min-height: 57px;
   }
 }
 
@@ -292,7 +299,7 @@
   border: 1px solid @black;
 
   @media (min-width: @desktop-content-size) {
-    .size(114, 42);
+    .size(114, 40);
   }
 }
 
@@ -342,6 +349,11 @@
   .font-params(@small, 14);
   color: @grey;
 
+  @media (min-width: @desktop-content-size) {
+    .font-params(@sub-main, 16);
+    margin-bottom: 2px;
+  }
+
   &::after {
     position: absolute;
 
@@ -375,7 +387,7 @@
 
   @media (min-width: @desktop-content-size) {
     position: absolute;
-    top: 635px;
+    top: 564px;
     right: 0;
 
     align-items: center;
@@ -409,6 +421,7 @@
 
   @media (min-width: @desktop-content-size) {
     margin-bottom: 70px;
+    height: 70px;
   }
 
   &:hover {
