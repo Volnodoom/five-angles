@@ -13,3 +13,16 @@
   width: if(isunit(@w, "%") or iskeyword(@w) or isunit(@w, px) or isstring(@w), @w, ~"@{w}px");
   height: if(isunit(@h, "%") or iskeyword(@h) or isunit(@h, px) or isstring(@h), @h, ~"@{h}px");
 }
+
+.remove-list-style() {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.prevent-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
