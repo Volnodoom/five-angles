@@ -1,0 +1,84 @@
+.count-regulation__button {
+  position: relative;
+  width: 27px;
+
+  flex-shrink: 0;
+
+  @media (min-width: @desktop-content-size) {
+    width: 42px;
+  }
+
+  &::before {
+    position: absolute;
+    .size(12, 2);
+
+    top: 15px;
+    left: 7px;
+
+    content: '';
+    background-color: @black;
+
+    @media (min-width: @desktop-content-size) {
+      width: 16px;
+      top: 19px;
+      left: 12px;
+    }
+  }
+
+  &--plus {
+    &::after {
+      position: absolute;
+      .size(12, 2);
+
+      top: 15px;
+      left: 7px;
+
+      content: '';
+      background-color: @black;
+
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
+
+      @media (min-width: @desktop-content-size) {
+        width: 16px;
+        top: 19px;
+        left: 12px;
+      }
+    }
+  }
+}
+
+.count-regulation__value {
+  width: 25px;
+  border: 0;
+
+  flex-shrink: 0;
+
+  text-align: center;
+  font-weight: 700;
+  color: @black;
+
+  @media (min-width: @desktop-content-size) {
+    width: 28px;
+    .font-params(@sub-huge, 23);
+  }
+
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.count-regulation__button,
+.count-regulation__value {
+  &:hover {
+    background-color: rgba(@grey-in-rgb, 0.1);
+  }
+
+    &:active {
+      &::after,
+      &::before {
+      background-color: rgba(@grey-in-rgb, 0.7)
+    }
+  }
+}
+

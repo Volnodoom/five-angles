@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Logo. Корзина.</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="page-header">
+      <a class="visually-hidden" href="#main">Перейти к содержанию корзины</a>
+
+        <a class="page-header__logo">
+          <svg class="logo-img__adaptive" xmlns="http://www.w3.org/2000/svg" width="77" heigh="24" viewBox="0 0 77 24" aria-label="Logo">
+            <use href="./img/sprite.svg#logo-adaptive"></use>
+          </svg>
+          <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" width="160" heigh="50" viewBox="0 0 160 50" aria-label="Logo">
+            <use href="./img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+
+        <div class="page-header__quick-access quick-access">
+          <ul class="quick-access__list">
+            <li class="quick-access__item quick-access__item--burger ">
+              <button class="button quick-access__burger" type="button">
+                <span class="visually-hidden">Меню</span>
+              </button>
+            </li>
+
+            <li class="quick-access__item">
+              <button class="button quick-access__search" type="button">
+                <svg class="image__search" xmlns="http://www.w3.org/2000/svg" width="24" heigh="24" viewBox="0 0 25 25" aria-label="Начать поиск">
+                  <use href="./img/sprite.svg#search"></use>
+                </svg>
+              </button>
+
+              <div class="quick-access__search-wrapper">
+                <input class="quick-access__search-input" type="text" id="search" placeholder="Поиск">
+              </div>
+            </li>
+
+            <li class="quick-access__item quick-access__item--profile">
+              <a class="button quick-access__profile" href="#">
+                <svg class="image__like" xmlns="http://www.w3.org/2000/svg" width="24" heigh="27" viewBox="0 0 24 27" aria-label="Профиль">
+                  <use href="./img/sprite.svg#profile"></use>
+                </svg>
+              </a>
+
+            </li>
+
+            <li class="quick-access__item">
+              <a class="button quick-access__likes" href="#">
+                <svg class="image__like" xmlns="http://www.w3.org/2000/svg" width="27" heigh="24" viewBox="0 0 27 24" aria-label="Избранные">
+                  <use href="./img/sprite.svg#like"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="quick-access__item">
+              <a class="button quick-access__basket" href="#">
+                <svg class="image__basket" xmlns="http://www.w3.org/2000/svg" width="22" heigh="22" viewBox="0 0 22 24" aria-label="Корзина">
+                  <use href="./img/sprite.svg#basket"></use>
+                </svg>
+                <span class="quick-access__basket-count">4</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="page-header__navigation">
+          <ul class="page-header__navigation-list">
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 1</a>
+            </li>
+
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 2</a>
+            </li>
+
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 3</a>
+            </li>
+
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 4</a>
+            </li>
+
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 5</a>
+            </li>
+
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 6</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="basket" id="main">
+        <nav class="basket__navigation">
+          <ol class="basket__navigation-list">
+            <li class="basket__navigation-item">
+              <a class="basket__navigation-link" href="#">Главная</a>
+            </li>
+
+            <li class="basket__navigation-item basket__navigation-item--active">
+              <a class="basket__navigation-link">Корзина</a>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="basket__wrapper">
+          <div class="basket__left-side">
+            <h1 class="basket__title">Корзина</h1>
+
+            <p class="basket__account">
+              Есть аккаунт?
+              <a class="basket__account-link" href="#"> Войти</a>
+            </p>
+
+            <form class="form" id="full-user-info">
+              <div class="form__line-wrapper">
+                <textarea class="form__input form__input--textarea" rows="1" id="user-addres" name="address" placeholder="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required></textarea>
+                <label class="form__label" for="user-addres">Адрес</label>
+              </div>
+
+              <div class="basket__map">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A94424d7d5d87e2414bc0d65a050de8fa0825224e0d2e10f09e9cf2ccb3742d01&amp;source=constructor"
+                  width="288"
+                  height="200"
+                  frameborder="0"
+                >
+                </iframe>
+              </div>
+
+              <div class="form__column">
+                <div class="form__line-wrapper">
+                  <input class="form__input" type="text" id="user-name" name="name" placeholder="Иван Иванович Кузнецов" required>
+                  <label class="form__label" for="user-name">Ваше Имя</label>
+                </div>
+
+                <div class="form__line-wrapper">
+                  <input class="form__input" type="tel" id="user-phone" name="phone" placeholder="+7 (921)-324-17-36" required>
+                  <label class="form__label" for="user-phone">Ваш Телефон</label>
+                </div>
+              </div>
+
+              <div class="form__line-wrapper">
+                <input class="form__input" type="email" id="user-email" name="email" placeholder="ivanIvanuch@mail.ru" required>
+                <label class="form__label" for="user-email">Ваш Email</label>
+              </div>
+
+              <!-- add form__line-wrapper--opened to wrapper element when user click on  basket__select span -->
+              <!-- when value selected it is needed to add class basket__select--selected to span basket__select -->
+              <!-- as well as add classes  basket__choice--active and select-item--active for selected item-->
+              <!-- basket__select--invalid highlight for wrong basket-select field -->
+              <div class="form__line-wrapper form__line-wrapper--select">
+                <span class="basket__select" tabindex="0">Тип упаковки</span>
+                <span class="basket__choice" tabindex="0">Пункт 3</span>
+
+                <ul class="basket__select-list select">
+                  <li class="select-item" tabindex="0">Пункт 1</li>
+
+                  <li class="select-item" tabindex="0">Пункт 2</li>
+
+                  <li class="select-item" tabindex="0">Пункт 3</li>
+
+                  <li class="select-item" tabindex="0">Пункт 4</li>
+
+                  <li class="select-item" tabindex="0">Пункт 5</li>
+                </ul>
+              </div>
+
+              <div class="form__line-wrapper">
+                <textarea class="form__input form__input--textarea" type="text" id="user-comments" name="comments" placeholder="Потрясающий продукт"></textarea>
+                <label class="form__label" for="user-comments">Введите комментарий</label>
+              </div>
+            </form>
+
+            <h2 class="basket__product">Выбранные товары:</h2>
+
+            <ul class="basket__product-gallery">
+              <li class="basket__product-card">
+                <div class="basket__product-info">
+                  <h3 class="basket__product-name">Товар 1</h3>
+                  <p class="basket__product-description">Описание товара, которое может быть длинным</p>
+
+                  <div class="basket__count-regulation count-regulation">
+                    <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
+                    <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
+                    <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
+                  </div>
+                </div>
+
+                <picture>
+                  <source
+                    media="(min-width: 1110px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view-desktop.webp 1x, ./img/content/product-view-desktop-@2x.webp 2x"
+                  >
+                  <source
+                    media="(min-width: 1110px)"
+                    srcset="./img/content/product-view-desktop.jpg 1x, ./img/content/product-view-desktop-@2x.jpg 2x"
+                  >
+                  <source
+                    media="(min-width: 320px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
+                  >
+                  <img
+                    class="basket__product-img"
+                    src="./img/content/product-view.jpg"
+                    srcset="./img/content/product-view-@2x.jpg 2x"
+                    width="80"
+                    height="80"
+                    alt="">
+                </picture>
+
+                <div class="basket__product-decision">
+                  <p class="basket__product-price">1090 руб.</p>
+                  <button class="basket__product-remove button" type="button">Удалить</button>
+                </div>
+              </li>
+              <li class="basket__product-card">
+                <div class="basket__product-info">
+                  <h3 class="basket__product-name">Товар 2</h3>
+                  <p class="basket__product-description">Описание товара, которое может быть очень-очень длинным</p>
+
+                  <div class="basket__count-regulation count-regulation">
+                    <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
+                    <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
+                    <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
+                  </div>
+                </div>
+
+                <picture>
+                  <source
+                    media="(min-width: 1110px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view-desktop.webp 1x, ./img/content/product-view-desktop-@2x.webp 2x"
+                  >
+                  <source
+                    media="(min-width: 1110px)"
+                    srcset="./img/content/product-view-desktop.jpg 1x, ./img/content/product-view-desktop-@2x.jpg 2x"
+                  >
+                  <source
+                    media="(min-width: 320px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
+                  >
+                  <img
+                    class="basket__product-img"
+                    src="./img/content/product-view.jpg"
+                    srcset="./img/content/product-view-@2x.jpg 2x"
+                    width="80"
+                    height="80"
+                    alt="">
+                </picture>
+
+                <div class="basket__product-decision">
+                  <p class="basket__product-price">1090 руб.</p>
+                  <button class="basket__product-remove button" type="button">Удалить</button>
+                </div>
+              </li>
+              <li class="basket__product-card">
+                <div class="basket__product-info">
+                  <h3 class="basket__product-name">Товар 3</h3>
+                  <p class="basket__product-description">Короткое описание товара</p>
+
+                  <div class="basket__count-regulation count-regulation">
+                    <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
+                    <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
+                    <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
+                  </div>
+                </div>
+
+                <picture>
+                  <source
+                    media="(min-width: 1110px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view-desktop.webp 1x, ./img/content/product-view-desktop-@2x.webp 2x"
+                  >
+                  <source
+                    media="(min-width: 1110px)"
+                    srcset="./img/content/product-view-desktop.jpg 1x, ./img/content/product-view-desktop-@2x.jpg 2x"
+                  >
+                  <source
+                    media="(min-width: 320px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
+                  >
+                  <img
+                    class="basket__product-img"
+                    src="./img/content/product-view.jpg"
+                    srcset="./img/content/product-view-@2x.jpg 2x"
+                    width="80"
+                    height="80"
+                    alt="">
+                </picture>
+
+                <div class="basket__product-decision">
+                  <p class="basket__product-price">1090 руб.</p>
+                  <button class="basket__product-remove button" type="button">Удалить</button>
+                </div>
+              </li>
+            </ul>
+            <p class="basket__result">
+              <span class="basket__result-state">Итог:</span>
+              <span class="basket__result-state">3790 руб.</span>
+            </p>
+            <button class="basket__purchase-button button" type="submit" form="full-user-info">Купить</button>
+          </div>
+          <div class="basket__right-side"></div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>
