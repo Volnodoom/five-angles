@@ -75,18 +75,23 @@
             <li class="page-header__navigation-item">
               <a class="page-header__navigation-link" href="#">Страница 1</a>
             </li>
+
             <li class="page-header__navigation-item">
               <a class="page-header__navigation-link" href="#">Страница 2</a>
             </li>
+
             <li class="page-header__navigation-item">
               <a class="page-header__navigation-link" href="#">Страница 3</a>
             </li>
+
             <li class="page-header__navigation-item">
               <a class="page-header__navigation-link" href="#">Страница 4</a>
             </li>
+
             <li class="page-header__navigation-item">
               <a class="page-header__navigation-link" href="#">Страница 5</a>
             </li>
+
             <li class="page-header__navigation-item">
               <a class="page-header__navigation-link" href="#">Страница 6</a>
             </li>
@@ -95,125 +100,140 @@
       </header>
 
       <main class="basket" id="main">
-        <ul class="basket__navigation-list">
-          <li class="basket__navigation-item">
-            <a class="basket__navigation-link" href="#">Главная</a>
-          </li>
-          <li class="basket__navigation-item basket__navigation-item--active">
-            <a class="basket__navigation-link">Корзина</a>
-          </li>
-        </ul>
+        <nav class="basket__navigation">
+          <ol class="basket__navigation-list">
+            <li class="basket__navigation-item">
+              <a class="basket__navigation-link" href="#">Главная</a>
+            </li>
 
-        <h1 class="basket__title">Корзина</h1>
-        <p class="basket__accaount">
-          Есть аккаунт?
-          <a class="basket__account-link" href="#"> Войти</a>
-        </p>
+            <li class="basket__navigation-item basket__navigation-item--active">
+              <a class="basket__navigation-link">Корзина</a>
+            </li>
+          </ol>
+        </nav>
 
-        <form class="basket__form" id="full-user-info">
-          <div class="basket__form-line-wrapper">
-            <textarea class="basket__input basket__input--textarea" id="user-addres" name="address" placeholder="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required></textarea>
-            <label class="basket__label" for="user-addres">Адрес</label>
-          </div>
+        <div class="basket__wrapper">
+          <div class="basket__left-side">
+            <h1 class="basket__title">Корзина</h1>
 
-          <div class="basket__map">
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A94424d7d5d87e2414bc0d65a050de8fa0825224e0d2e10f09e9cf2ccb3742d01&amp;source=constructor"
-              width="288"
-              height="200"
-              frameborder="0"
-            >
-            </iframe>
-          </div>
+            <p class="basket__account">
+              Есть аккаунт?
+              <a class="basket__account-link" href="#"> Войти</a>
+            </p>
 
-          <div class="basket__form-line-wrapper">
-            <input class="basket__input" type="text" id="user-name" name="name" placeholder="Иван Иванович Кузнецов" required>
-            <label class="basket__label" for="user-name">Ваше Имя</label>
-          </div>
-
-          <div class="basket__form-line-wrapper">
-            <input class="basket__input" type="tel" id="user-phone" name="phone" placeholder="+7 (921)-324-17-36" required>
-            <label class="basket__label" for="user-phone">Ваш Телефон</label>
-          </div>
-
-          <div class="basket__form-line-wrapper">
-            <input class="basket__input" type="email" id="user-email" name="email" placeholder="ivanIvanuch@mail.ru" required>
-            <label class="basket__label" for="user-email">Ваш Email</label>
-          </div>
-
-          <!-- add basket__form-line-wrapper--opened to wrapper element when user click on  basket__select span -->
-          <!-- when value selected it is needed to add class basket__select--selected to span basket__select -->
-          <!-- as well as add classes  basket__choice--active and select-item--active for selected item-->
-          <!-- basket__select--invalid highlight for wrong basket-select field -->
-          <div class="basket__form-line-wrapper basket__form-line-wrapper--select">
-            <span class="basket__select" tabindex="0">Тип упаковки</span>
-            <span class="basket__choice" tabindex="0">Пункт 3</span>
-            <ul class="basket__select-list select">
-              <li class="select-item" tabindex="0">Пункт 1</li>
-              <li class="select-item" tabindex="0">Пункт 2</li>
-              <li class="select-item" tabindex="0">Пункт 3</li>
-              <li class="select-item" tabindex="0">Пункт 4</li>
-              <li class="select-item" tabindex="0">Пункт 5</li>
-            </ul>
-          </div>
-
-          <div class="basket__form-line-wrapper">
-            <textarea class="basket__input basket__input--textarea" type="text" id="user-comments" name="comments" placeholder="Потрясающий продукт"></textarea>
-            <label class="basket__label" for="user-comments">Введите комментарий</label>
-          </div>
-        </form>
-
-        <h2 class="basket__product">Выбранные товары:</h2>
-
-        <ul class="basket__product-gallery">
-          <li class="basket__product-card">
-            <div class="basket__product-info">
-              <h3 class="basket__product-name">Товар 1</h3>
-              <div class="basket__count-regulation count-regulation">
-                <button class="count-regulation__button-minus button" type="button" aria-label="Уменьшить количество"></button>
-                <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
-                <button class="count-regulation__button-plus button" type="button" aria-label="Увеличить количество"></button>
+            <form class="basket__form" id="full-user-info">
+              <div class="basket__form-line-wrapper">
+                <textarea class="basket__input basket__input--textarea" id="user-addres" name="address" placeholder="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required></textarea>
+                <label class="basket__label" for="user-addres">Адрес</label>
               </div>
-            </div>
 
-            <picture>
-              <!-- <source
-                media="(min-width: 768px)"
-                type="image/webp"
-                srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
-              >
-              <source
-                media="(min-width: 768px)"
-                srcset="./img/content/logo/logo-tablet-light.png 1x, ./img/content/logo/logo-tablet-light@2.png 2x"
-              > -->
-              <source
-                media="(min-width: 320px)"
-                type="image/webp"
-                srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
-              >
-              <img
-                class="basket__product-img"
-                src="./img/content/product-view.jpg"
-                srcset="./img/content/product-view-@2x.jpg 2x"
-                width="80"
-                height="80"
-                alt="">
-            </picture>
+              <div class="basket__map">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A94424d7d5d87e2414bc0d65a050de8fa0825224e0d2e10f09e9cf2ccb3742d01&amp;source=constructor"
+                  width="288"
+                  height="200"
+                  frameborder="0"
+                >
+                </iframe>
+              </div>
 
-            <div class="basket__product-decision">
-              <p class="basket__product-price">1090 руб.</p>
-              <button class="basket__product-remove button" type="button">Удалить</button>
-            </div>
-          </li>
+              <div class="basket__form-column">
+                <div class="basket__form-line-wrapper">
+                  <input class="basket__input" type="text" id="user-name" name="name" placeholder="Иван Иванович Кузнецов" required>
+                  <label class="basket__label" for="user-name">Ваше Имя</label>
+                </div>
 
-        </ul>
+                <div class="basket__form-line-wrapper">
+                  <input class="basket__input" type="tel" id="user-phone" name="phone" placeholder="+7 (921)-324-17-36" required>
+                  <label class="basket__label" for="user-phone">Ваш Телефон</label>
+                </div>
+              </div>
 
-        <p class="basket__result">
-          <span class="basket__result-state">Итог:</span>
-          <span class="basket__result-state">3790 руб.</span>
-        </p>
+              <div class="basket__form-line-wrapper">
+                <input class="basket__input" type="email" id="user-email" name="email" placeholder="ivanIvanuch@mail.ru" required>
+                <label class="basket__label" for="user-email">Ваш Email</label>
+              </div>
 
-        <button class="basket__purchase-button button" type="submit" form="full-user-info">Купить</button>
+              <!-- add basket__form-line-wrapper--opened to wrapper element when user click on  basket__select span -->
+              <!-- when value selected it is needed to add class basket__select--selected to span basket__select -->
+              <!-- as well as add classes  basket__choice--active and select-item--active for selected item-->
+              <!-- basket__select--invalid highlight for wrong basket-select field -->
+              <div class="basket__form-line-wrapper basket__form-line-wrapper--select">
+                <span class="basket__select" tabindex="0">Тип упаковки</span>
+                <span class="basket__choice" tabindex="0">Пункт 3</span>
+
+                <ul class="basket__select-list select">
+                  <li class="select-item" tabindex="0">Пункт 1</li>
+
+                  <li class="select-item" tabindex="0">Пункт 2</li>
+
+                  <li class="select-item" tabindex="0">Пункт 3</li>
+
+                  <li class="select-item" tabindex="0">Пункт 4</li>
+
+                  <li class="select-item" tabindex="0">Пункт 5</li>
+                </ul>
+              </div>
+
+              <div class="basket__form-line-wrapper">
+                <textarea class="basket__input basket__input--textarea" type="text" id="user-comments" name="comments" placeholder="Потрясающий продукт"></textarea>
+                <label class="basket__label" for="user-comments">Введите комментарий</label>
+              </div>
+            </form>
+
+            <h2 class="basket__product">Выбранные товары:</h2>
+
+            <ul class="basket__product-gallery">
+              <li class="basket__product-card">
+                <div class="basket__product-info">
+                  <h3 class="basket__product-name">Товар 1</h3>
+                  <p class="basket__product-description">Описание товара, которое может быть длинным</p>
+
+                  <div class="basket__count-regulation count-regulation">
+                    <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
+                    <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
+                    <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
+                  </div>
+                </div>
+
+                <picture>
+                  <source
+                    media="(min-width: 1110px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view-desktop.webp 1x, ./img/content/product-view-desktop-@2x.webp 2x"
+                  >
+                  <source
+                    media="(min-width: 1110px)"
+                    srcset="./img/content/product-view-desktop.jpg 1x, ./img/content/product-view-desktop-@2x.jpg 2x"
+                  >
+                  <source
+                    media="(min-width: 320px)"
+                    type="image/webp"
+                    srcset="./img/content/product-view.webp 1x, ./img/content/product-view-@2x.webp 2x"
+                  >
+                  <img
+                    class="basket__product-img"
+                    src="./img/content/product-view.jpg"
+                    srcset="./img/content/product-view-@2x.jpg 2x"
+                    width="80"
+                    height="80"
+                    alt="">
+                </picture>
+
+                <div class="basket__product-decision">
+                  <p class="basket__product-price">1090 руб.</p>
+                  <button class="basket__product-remove button" type="button">Удалить</button>
+                </div>
+              </li>
+            </ul>
+            <p class="basket__result">
+              <span class="basket__result-state">Итог:</span>
+              <span class="basket__result-state">3790 руб.</span>
+            </p>
+            <button class="basket__purchase-button button" type="submit" form="full-user-info">Купить</button>
+          </div>
+          <div class="basket__right-side"></div>
+        </div>
       </main>
     </div>
 
