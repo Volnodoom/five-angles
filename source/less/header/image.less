@@ -1,18 +1,32 @@
 .image__search {
-  .size(22; 22);
-
+  .size(24; 24);
   fill: @white;
+
+  @media (min-width: @desktop-content-size) {
+    .size(27; 27);
+  }
 }
 
 .image__like {
-  .size(24; 22);
+  .size(26; 24);
   fill: @white;
 
+  @media (min-width: @desktop-content-size) {
+    .size(30; 27);
+  }
 }
 
 .image__basket {
-  .size(20; 22);
+  .size(22; 22);
   fill: @white;
+  margin: 3px 0 0;
 
-  margin: 4px 0 0;
+  @media (min-width: @desktop-content-size) {
+    .size(25; 26);
+  }
+}
+
+.image__profile {
+  .size(24; 27);
+  fill: @white;
 }

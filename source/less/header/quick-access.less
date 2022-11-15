@@ -1,0 +1,179 @@
+.quick-access-svg-interaction() {
+  &:link,
+  &:visited {
+    color: @black;
+  }
+
+  &:hover {
+    color: @grey-light;
+  }
+
+  &:active {
+    color: @grey;
+  }
+}
+
+.quick-access__list {
+  .remove-list-style();
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  @media (min-width: @mobile-size) and (max-width: @max-mobile-content-size) {
+    gap: 10px 14px;
+  }
+
+  @media (min-width: @desktop-content-size) {
+    gap: 10px 20px;
+  }
+}
+
+.quick-access__item {
+  display: flex;
+
+  &:nth-of-type(2) {
+    margin-right: 137px;
+  }
+
+  @media (min-width: @desktop-content-size) {
+    &:nth-of-type(2) {
+      margin-right: auto;
+    }
+  }
+
+  &--burger {
+    @media (min-width: @desktop-content-size) {
+      display: none;
+    }
+  }
+
+  &--profile {
+    display: none;
+
+    @media (min-width: @desktop-content-size) {
+      display: block;
+    }
+  }
+}
+
+.quick-access__burger {
+  position: relative;
+  .size(28; 22);
+
+  @media (min-width: @desktop-content-size) {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    .size(28; 2);
+
+    content: '';
+    background-color: @black;
+
+    box-shadow: 0 10px @black,
+                0 20px @black;
+  }
+
+  &:hover::before {
+    background-color: @grey-light;
+
+    box-shadow: 0 10px @grey-light,
+                0 20px @grey-light;
+  }
+
+  &:active::before {
+    background-color: @grey;
+
+    box-shadow: 0 10px @grey,
+                0 20px @grey;
+  }
+}
+
+.quick-access__profile {
+  display: none;
+
+  @media (min-width: @desktop-content-size) {
+    display: block;
+  }
+}
+
+.quick-access__profile,
+.quick-access__search,
+.quick-access__likes {
+  height: 24px;
+  .quick-access-svg-interaction();
+
+  @media (min-width: @desktop-content-size) {
+    height: 26px;
+  }
+}
+
+.quick-access__search {
+  @media (min-width: @desktop-content-size) {
+    margin-right: 20px;
+  }
+}
+
+.quick-access__search-wrapper {
+  display: none;
+
+  @media (min-width: @desktop-content-size) {
+    display: block;
+
+  }
+  .size(250, 26);
+  border-bottom: 1px solid @grey;
+}
+
+.quick-access__search-input {
+  border: 0;
+  .size(250, 21);
+
+  .font-params(@over-min, 18);
+}
+
+.quick-access__basket {
+  position: relative;
+  .size(31, 25);
+
+  text-align: start;
+  .quick-access-svg-interaction();
+
+  @media (min-width: @desktop-content-size) {
+    .size(33, 29);
+  }
+
+  &:hover {
+    .quick-access__basket-count {
+      background-color: @grey-light;
+    }
+  }
+
+  &:active {
+    .quick-access__basket-count {
+      background-color: @grey;
+    }
+  }
+}
+
+.quick-access__basket-count {
+  position: absolute;
+  padding: 1px 4px;
+
+  top: 0px;
+  right: 0px;
+
+  .size(16, 16);
+  border-radius: 50%;
+
+  .font-params(@small, 14);
+  color: @white;
+  background-color: @black;
+}
+

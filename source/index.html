@@ -14,45 +14,81 @@
       <a class="visually-hidden" href="#main">Перейти к содержанию корзины</a>
 
         <a class="page-header__logo">
-          <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" width="77" heigh="24" viewBox="0 0 77 24" aria-label="Logo">
+          <svg class="logo-img__adaptive" xmlns="http://www.w3.org/2000/svg" width="77" heigh="24" viewBox="0 0 77 24" aria-label="Logo">
             <use href="./img/sprite.svg#logo-adaptive"></use>
+          </svg>
+          <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" width="160" heigh="50" viewBox="0 0 160 50" aria-label="Logo">
+            <use href="./img/sprite.svg#logo"></use>
           </svg>
         </a>
 
-        <nav class="page-header__navigation navigation">
-          <ul class="navigation__list">
-            <li class="navigation__item">
-              <button class="button navigation__burger" type="button">
+        <div class="page-header__quick-access quick-access">
+          <ul class="quick-access__list">
+            <li class="quick-access__item quick-access__item--burger ">
+              <button class="button quick-access__burger" type="button">
                 <span class="visually-hidden">Меню</span>
               </button>
+            </li>
 
-            </li class="navigation__item">
-
-            <li class="navigation__item">
-              <button class="button navigation__search" type="button">
-                <svg class="image__search" xmlns="http://www.w3.org/2000/svg" width="22" heigh="22" viewBox="0 0 26 24" aria-label="Поиск">
+            <li class="quick-access__item">
+              <button class="button quick-access__search" type="button">
+                <svg class="image__search" xmlns="http://www.w3.org/2000/svg" width="24" heigh="24" viewBox="0 0 25 25" aria-label="Начать поиск">
                   <use href="./img/sprite.svg#search"></use>
                 </svg>
               </button>
 
-            </li class="navigation__item">
+              <div class="quick-access__search-wrapper">
+                <input class="quick-access__search-input" type="text" id="search" placeholder="Поиск">
+              </div>
+            </li>
 
-            <li class="navigation__item">
-              <a class="button navigation__likes" href="#">
-                <svg class="image__like" xmlns="http://www.w3.org/2000/svg" width="24" heigh="22" viewBox="-1 0 28 26" aria-label="Избранные">
-                  <use href="./img/sprite.svg#like"></use>
+            <li class="quick-access__item quick-access__item--profile">
+              <a class="button quick-access__profile" href="#">
+                <svg class="image__like" xmlns="http://www.w3.org/2000/svg" width="24" heigh="27" viewBox="0 0 24 27" aria-label="Профиль">
+                  <use href="./img/sprite.svg#profile"></use>
                 </svg>
               </a>
 
             </li>
 
-            <li class="navigation__item">
-              <a class="button navigation__basket" href="#">
-                <svg class="image__basket" xmlns="http://www.w3.org/2000/svg" width="20" heigh="22" viewBox="-1 0 25 25" aria-label="Корзина">
+            <li class="quick-access__item">
+              <a class="button quick-access__likes" href="#">
+                <svg class="image__like" xmlns="http://www.w3.org/2000/svg" width="27" heigh="24" viewBox="0 0 27 24" aria-label="Избранные">
+                  <use href="./img/sprite.svg#like"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="quick-access__item">
+              <a class="button quick-access__basket" href="#">
+                <svg class="image__basket" xmlns="http://www.w3.org/2000/svg" width="22" heigh="22" viewBox="0 0 22 24" aria-label="Корзина">
                   <use href="./img/sprite.svg#basket"></use>
                 </svg>
-                <span class="navigation__basket-count">4</span>
+                <span class="quick-access__basket-count">4</span>
               </a>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="page-header__navigation">
+          <ul class="page-header__navigation-list">
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 1</a>
+            </li>
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 2</a>
+            </li>
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 3</a>
+            </li>
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 4</a>
+            </li>
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 5</a>
+            </li>
+            <li class="page-header__navigation-item">
+              <a class="page-header__navigation-link" href="#">Страница 6</a>
             </li>
           </ul>
         </nav>
