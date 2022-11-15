@@ -123,7 +123,6 @@ const watcher = () => {
 export const build = (done) => gulp.series(
   clean,
   copy,
-  optimizeImages,
   styles,
   html,
   scripts,
