@@ -12,6 +12,7 @@
   padding-top: 18px;
 
   min-height: 46px;
+  cursor: pointer;
 
   @media (min-width: @desktop-content-size) {
     margin-bottom: 20px;
@@ -38,7 +39,7 @@
   }
 
   &--opened {
-    .form__select-list {
+    .basket__select-list {
       display: block;
     }
 
@@ -94,17 +95,12 @@
   }
 
   &--textarea {
-    height: 30px;
-
     resize: none;
     overflow: hidden;
 
     &:not(:placeholder-shown),
     &:focus {
       height: auto;
-      overflow: auto;
-
-      transition: height 0.3s;
     }
   }
 
@@ -112,21 +108,6 @@
   &:invalid + .form__label {
     color: @red;
     border-bottom-color: @red;
-  }
-}
-
-.form__map {
-  position: relative;
-  margin-bottom: 24px;
-
-  .size(100%, 200);
-
-  @media (min-width: @desktop-content-size) {
-    position: absolute;
-    top: 71px;
-    right: 0;
-
-    .size(555, 700);
   }
 }
 

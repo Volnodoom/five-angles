@@ -11,6 +11,7 @@ import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import del from 'del';
 import browser from 'browser-sync';
+import concat from 'gulp-concat';
 
 // Styles
 
@@ -39,6 +40,7 @@ const html = () => {
 
 const scripts = () => {
   return gulp.src('source/js/*.js')
+  .pipe(concat('main.js'))
     .pipe(terser())
     .pipe(rename("script.min.js"))
     .pipe(gulp.dest('build/js'))
@@ -114,7 +116,7 @@ const reload = (done) => {
 
 const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(styles));
-  gulp.watch('source/js/**/*.js', gulp.series(scripts));
+  gulp.watch('source/js/*.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 

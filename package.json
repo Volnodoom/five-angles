@@ -7,6 +7,7 @@
     "browser-sync": "2.27.10",
     "del": "6.0.0",
     "gulp": "4.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "5.0.1",
     "gulp-less": "5.0.0",
     "gulp-libsquoosh": "^1.0.12",
@@ -31,16 +32,12 @@
     "not op_mini all",
     "not < 0.25%"
   ],
-  "editorconfig-cli": [
-    "*.json",
-    "*.js",
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/img/**/*.svg",
-    "source/less/**/*.less"
-  ],
   "engines": {
     "node": "^16"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "leaflet": "^1.9.2"
+  }
 }

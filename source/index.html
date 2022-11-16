@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
     <title>Logo. Корзина.</title>
   </head>
 
@@ -123,18 +130,11 @@
 
             <form class="form" id="full-user-info">
               <div class="form__line-wrapper">
-                <textarea class="form__input form__input--textarea" rows="1" id="user-addres" name="address" placeholder="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required></textarea>
-                <label class="form__label" for="user-addres">Адрес</label>
+                <textarea class="form__input form__input--textarea" id="user-address" name="address" placeholder="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152" required>г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152</textarea>
+                <label class="form__label" for="user-address">Адрес</label>
               </div>
 
-              <div class="basket__map">
-                <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A94424d7d5d87e2414bc0d65a050de8fa0825224e0d2e10f09e9cf2ccb3742d01&amp;source=constructor"
-                  width="288"
-                  height="200"
-                >
-                </iframe>
-              </div>
+              <div class="basket__map" id="map"></div>
 
               <div class="form__column">
                 <div class="form__line-wrapper">
@@ -159,18 +159,14 @@
               <!-- basket__select--invalid highlight for wrong basket-select field -->
               <div class="form__line-wrapper form__line-wrapper--select">
                 <span class="basket__select" tabindex="0">Тип упаковки</span>
-                <span class="basket__choice" tabindex="0">Пункт 3</span>
+                <span class="basket__choice" tabindex="0"></span>
 
                 <ul class="basket__select-list select">
-                  <li class="select-item" tabindex="0">Пункт 1</li>
+                  <li class="select-item" tabindex="0">Без упаковки</li>
 
-                  <li class="select-item" tabindex="0">Пункт 2</li>
+                  <li class="select-item" tabindex="0">Стандартная</li>
 
-                  <li class="select-item" tabindex="0">Пункт 3</li>
-
-                  <li class="select-item" tabindex="0">Пункт 4</li>
-
-                  <li class="select-item" tabindex="0">Пункт 5</li>
+                  <li class="select-item" tabindex="0">Подарочная</li>
                 </ul>
               </div>
 
@@ -190,7 +186,7 @@
 
                   <div class="basket__count-regulation count-regulation">
                     <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
-                    <input class="count-regulation__value" type="number" placeholder="1" id="1-product-count" name="product-count" max="99">
+                    <input class="count-regulation__value" type="text" placeholder="1" id="1-product-count" name="product-count" max="99">
                     <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
                   </div>
                 </div>
@@ -231,7 +227,7 @@
 
                   <div class="basket__count-regulation count-regulation">
                     <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
-                    <input class="count-regulation__value" type="number" placeholder="1" id="2-product-count" name="product-count" max="99">
+                    <input class="count-regulation__value" type="text" placeholder="1" id="2-product-count" name="product-count" max="99">
                     <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
                   </div>
                 </div>
@@ -272,7 +268,7 @@
 
                   <div class="basket__count-regulation count-regulation">
                     <button class="count-regulation__button button" type="button" aria-label="Уменьшить количество"></button>
-                    <input class="count-regulation__value" type="number" placeholder="1" id="3-product-count" name="product-count" max="99">
+                    <input class="count-regulation__value" type="text" placeholder="1" id="3-product-count" name="product-count" max="99">
                     <button class="count-regulation__button count-regulation__button--plus button" type="button" aria-label="Увеличить количество"></button>
                   </div>
                 </div>
@@ -307,10 +303,12 @@
                 </div>
               </li>
             </ul>
+
             <p class="basket__result">
               <span class="basket__result-state">Итог:</span>
               <span class="basket__result-state">3790 руб.</span>
             </p>
+
             <button class="basket__purchase-button button" type="submit" form="full-user-info">Купить</button>
           </div>
           <div class="basket__right-side"></div>
@@ -318,5 +316,6 @@
       </main>
     </div>
 
+    <script src="./js/script.min.js" type="module"></script>
   </body>
 </html>
