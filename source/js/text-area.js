@@ -7,9 +7,9 @@ const addressField = $(textAreas.get(0));
 
 let isAddressFieldValid = addressField.val().trim().length > 0;
 
-const setTextAreaHight = (evt) => {
-  evt.target.style.height = 0;
-  evt.target.style.height = (evt.target.scrollHeight) + 'px';
+const setTextAreaHight = (element) => {
+  element.style.height = 0;
+  element.style.height = (element.scrollHeight) + 'px';
 }
 
 const initiateStartHeight = (index, element) => {
@@ -18,12 +18,11 @@ const initiateStartHeight = (index, element) => {
     return;
   }
 
-  $(element).height(0);
-  $(element).height(element.scrollHeight);
+  setTextAreaHight(element)
 }
 
 const handleTextAreaInput = (evt) => {
-  setTextAreaHight(evt);
+  setTextAreaHight(evt.target);
   isAddressFieldValid = evt.target.value.trim().length > 0;
 
   if(!isAddressFieldValid) {
@@ -42,7 +41,7 @@ const handleTextAreaFocus = (evt) => {
     }
   }
 
-  setTextAreaHight(evt);
+  setTextAreaHight(evt.target);
 }
 
 const handleTextAreaBlur = (evt) => {
@@ -51,7 +50,7 @@ const handleTextAreaBlur = (evt) => {
   }
 
   evt.target.value = evt.target.value.trim();
-  setTextAreaHight(evt);
+  setTextAreaHight(evt.target);
 }
 
 textAreas.each(initiateStartHeight).on('input', handleTextAreaInput);
